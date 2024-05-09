@@ -10,7 +10,7 @@ with open('ai_model.pkl', 'rb') as f:
     model = pickle.load(f)
 
 # Promt the user for input
-print("input format: 1.5 3.5 0.2 3\n")
+print("input format: sepal_length sepal_width petal_length petal_width\n")
 user_input = input("Please enter your input: ")
 input_vector = np.array([float(i) for i in user_input.split()])
 
@@ -23,4 +23,6 @@ prediction = model.predict([input_vector])
 target_names = iris['target_names']
 predicted_class_name = target_names[int(prediction)]
 
-print(predicted_class_name)
+print(f"Predicted flower is '{predicted_class_name}'")
+
+#print(f"Predicted flower is "{}',predicted_class_name")
