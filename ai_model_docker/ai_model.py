@@ -22,13 +22,7 @@ y_pred = model.predict(X_test)
 print( f"Model accuracy: {accuracy_score(y_test, y_pred)}")
 
 # Save the trained model to a file
-#with open('ai_model.pkl', 'wb') as f:
-#    pickle.dump(model,f)
+with open('ai_model.pkl', 'wb') as f:
+    pickle.dump(model,f)
 
 
-# trying to take user input and then test the model
-user_input = input("please enter your input: ")
-input_vector = np.array([float(i) for i in user_input.split()])
-
-prediction_test = model.predict([input_vector])
-print(prediction_test)
