@@ -21,7 +21,8 @@ prediction = model.predict([input_vector])
 
 # Mapping predicted class to actual class label
 target_names = iris['target_names']
-predicted_class_name = target_names[int(prediction)]
+predict_class = int(prediction[0])
+predicted_class_name = target_names[predict_class]
 
 print(f"Predicted flower is '{predicted_class_name}'")
 
