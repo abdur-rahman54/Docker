@@ -22,7 +22,34 @@ y_pred = model.predict(X_test)
 print( f"Model accuracy: {accuracy_score(y_test, y_pred)}")
 
 # Save the trained model to a file
-with open('ai_model.pkl', 'wb') as f:
-    pickle.dump(model,f)
+#with open('ai_model.pkl', 'wb') as f:
+#    pickle.dump(model,f)
+
+
+# Mapping predicted class to actual class label
+target_names = iris['target_names']
+
+# Continuous input and prediction loop
+while True:
+    # Prompt the user for input
+    print("input format: sepal_length sepal_width petal_length petal_width\n")
+    user_input = input("Please enter your input (or type 'exit' to quit): ")
+    
+    # Check if the user wants to exit
+    if user_input.lower() == 'exit':
+        print("Exiting the program.")
+        break
+    
+    # Convert user input into an input vector
+    input_vector = np.array([float(i) for i in user_input.split()])
+    
+    # Use the model to make a prediction
+    prediction = model.predict([input_vector])
+    
+    # Get the predicted class name
+    predict_class = int(prediction[0])
+    predicted_class_name = target_names[predict_class]
+    
+    print(f"Predicted flower is '{predicted_class_name}'\n")
 
 
