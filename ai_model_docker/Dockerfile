@@ -5,9 +5,7 @@ FROM python:3.11-slim
 WORKDIR /app
 
 # Copy the necessary files into the container
-COPY ai_model.pkl .
-COPY app.py .
-COPY requirements.txt .
+COPY . .
 
 # Install any dependencies
 RUN pip install --no-cache-dir -r requirements.txt
