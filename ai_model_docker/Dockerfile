@@ -7,8 +7,10 @@ WORKDIR /app
 # Copy the necessary files into the container
 COPY . .
 
-# Install any dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+# Install any necessary build dependencies temporarily
+RUN apk add --no-cache --virtual .build-deps build-base python3-dev \
+    && pip install --no-cache-dir -r requirements.txt \
+    && apk del .build-deps
 
 # Command to run the Python script when the container starts
 CMD ["python", "app.py"]
