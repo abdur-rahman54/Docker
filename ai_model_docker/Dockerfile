@@ -1,5 +1,5 @@
 # Use the official Python image as the base image
-FROM python:3.11-alpine
+FROM python:3.11-slim
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -8,8 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Install any necessary build dependencies temporarily
-RUN apk add --no-cache --virtual .build-deps build-base \
-    && pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Command to run the Python script when the container starts
 CMD ["python", "app.py"]
