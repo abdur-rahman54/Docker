@@ -9,8 +9,7 @@ COPY . .
 
 # Install any necessary build dependencies temporarily
 RUN apk add --no-cache --virtual .build-deps build-base \
-    && pip install --no-cache-dir -r requirements.txt \
-    && apk del .build-deps
+    && pip install --no-cache-dir -r requirements.txt
 
 # Command to run the Python script when the container starts
 CMD ["python", "app.py"]
