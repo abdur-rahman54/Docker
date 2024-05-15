@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Install any necessary build dependencies temporarily
-RUN apk add --no-cache --virtual .build-deps build-base python3-dev \
+RUN apk add --no-cache --virtual .build-deps build-base \
     && pip install --no-cache-dir -r requirements.txt \
     && apk del .build-deps
 
