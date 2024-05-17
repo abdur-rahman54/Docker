@@ -1,8 +1,8 @@
-FROM python:3
+FROM python:3-alpine
 LABEL maintainer="Abdur Rahman"
 
-# Install Jupyter Notebook and dependencies
-RUN pip install jupyter
+# Install Jupyter Notebook and dependencies in a single RUN command
+RUN pip install --no-cache-dir jupyter
 
 # Create a directory for the notebook
 WORKDIR /notebooks
