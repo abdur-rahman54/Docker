@@ -1,16 +1,7 @@
-FROM python:3.12-alpine
+FROM python:3-alpine
 LABEL maintainer="Abdur Rahman"
 
-# Install dependencies
-RUN apk add --no-cache \
-        gcc \
-        musl-dev \
-        linux-headers \
-        python3-dev \
-        libffi-dev \
-        openssl-dev
-
-# Install Jupyter Notebook and dependencies
+# Install Jupyter Notebook and dependencies in a single RUN command
 RUN pip install --no-cache-dir jupyter
 
 # Create a directory for the notebook
