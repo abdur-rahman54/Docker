@@ -2,6 +2,7 @@
 FROM python:3.12-alpine as build-stage
 
 LABEL maintainer="Abdur Rahman"
+LABEL version="alpine"
 
 # Install build dependencies
 RUN apk add --no-cache \
@@ -19,6 +20,7 @@ RUN pip install --no-cache-dir jupyter
 FROM python:3.12-alpine
 
 LABEL maintainer="Abdur Rahman"
+LABEL version="alpine"
 
 # Install runtime dependencies
 RUN apk add --no-cache \
