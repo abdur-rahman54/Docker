@@ -63,7 +63,7 @@ The trained model is packaged into a Docker container to ensure consistency and 
 
 3. Run the Docker container:
     ```bash
-    docker run -p 5000:5000 iris-classification:latest
+    docker run iris-classification:latest
     ```
 
 ## Usage
@@ -81,4 +81,3 @@ Example JSON payload for prediction:
     "petal_length": 1.4,
     "petal_width": 0.2
 }
-
