@@ -35,25 +35,27 @@ Each sample belongs to one of three species of Iris flowers:
 A simple machine learning model is created using the following steps:
 1. Load the Iris dataset from sklearn.
 2. Split the dataset into training and testing sets.
-3. Train a classifier (e.g., Logistic Regression, Decision Tree) on the training set.
+3. Train a classifier (e.g., Random forest) on the training set.
 4. Evaluate the classifier on the testing set.
 
 ## Docker Deployment
 
 The trained model is packaged into a Docker container to ensure consistency and ease of deployment across different environments. The Docker container includes all necessary dependencies and the model itself.
 
-## Installation
+
 
 ### Prerequisites
 
 - Docker installed on your machine
 
+## Installation
+
 ### Steps
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/iris-classification.git
-    cd iris-classification
+    git clone https://github.com/abdur-rahman54/Docker.git
+    cd Docker/ai_model_docker
     ```
 
 2. Build the Docker image:
@@ -63,21 +65,9 @@ The trained model is packaged into a Docker container to ensure consistency and 
 
 3. Run the Docker container:
     ```bash
-    docker run iris-classification:latest
+    docker run --rm --it iris-classification:latest
     ```
 
 ## Usage
 
-Once the Docker container is running, the model can be accessed via a web API. The following endpoints are available:
-
-- `GET /`: Returns a welcome message.
-- `POST /predict`: Takes a JSON payload with the features of an Iris flower and returns the predicted species.
-
-Example JSON payload for prediction:
-```json
-{
-    "sepal_length": 5.1,
-    "sepal_width": 3.5,
-    "petal_length": 1.4,
-    "petal_width": 0.2
-}
+Currently its a offline Docker implementation. You can only use it on your local machine.
