@@ -55,6 +55,8 @@ For Ubuntu or debain linux
 sudo apt install docker.io
 ```
 
+Windows user can download Docker from [here](https://www.docker.com/products/docker-desktop/)
+
 ## Installation
 
 ### Steps
