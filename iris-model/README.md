@@ -67,29 +67,33 @@ Windows user can download Docker from [here](https://www.docker.com/products/doc
     cd Docker/iris-model
     ```
 
-2. Build the Docker image: To build the Docker image, use the following command format:
+2. Build the Docker image: 
+	To build the Docker image, use the following command format:
 	```
 	docker build -t <image name> .
 	```
-For example, to build an image named iris-classification:
+	For example, to build an image named iris-classification:
+
     ```bash
     docker build -t iris-classification .
     ```
-Note: You can use any name you prefer for the image instead of iris-classification. Don't forget to include the dot (.) at the end of the command to specify the current directory as the build context.
+	Note: You can use any name you prefer for the image instead of iris-classification. Don't forget to include the dot (.) at the end of the command to specify the current directory as the build context.
 
 3. Run the Docker container: To run a Docker container from the Docker image, use this command format:
-```
-docker run <image name>
-```
-Since we named the image iris-classification in the previous step, we can use that name to run the container:
+
+	```
+	docker run <image name>
+	```
+	Since we named the image iris-classification in the previous step, we can use that name to run the container:
+
     ```bash
     docker run --rm -it iris-classification
     ```
-In this command:
-- --rm: Automatically removes the container when it exits. This helps to keep your system clean by removing unnecessary containers.
-- -it: Combines two flags, -i (interactive) and -t (pseudo-TTY). This allows you to interact with the container via the terminal.
+	In this command:
+	- --rm: Automatically removes the container when it exits. This helps to keep your system clean by removing unnecessary containers.
+	- -it: Combines two flags, -i (interactive) and -t (pseudo-TTY). This allows you to interact with the container via the terminal.
 
-You should replace 'iris-classification' with your own image name if you used a different name during the build process.
+	You should replace 'iris-classification' with your own image name if you used a different name during the build process.
 
 ## Contributing
 
