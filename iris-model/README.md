@@ -48,24 +48,26 @@ The trained model is packaged into a Docker container to ensure consistency and 
 
 - Docker installed on your machine
 
-If you dont have Docker on your machine then follow this step:
+If Docker is not already installed, follow these steps:
 
-For Ubuntu or debain linux
+For Ubuntu or Debian Linux:
 ```
 sudo apt install docker.io
 ```
-
 Windows user can download Docker from [here](https://www.docker.com/products/docker-desktop/)
 
 ## Installation
 
 ### Steps
 
-1. Clone the repository:
+1. Clone the repository: 
+First, clone the GitHub repository to your desired location. Use the following commands:
+
     ```bash
     git clone https://github.com/abdur-rahman54/Docker.git
     cd Docker/iris-model
     ```
+This will download the repository and navigate into the iris-model directory, where you can proceed with the next steps.
 
 2. Build the Docker image: 
 	To build the Docker image, use the following command format:
@@ -95,6 +97,12 @@ Windows user can download Docker from [here](https://www.docker.com/products/doc
 
 	You should replace 'iris-classification' with your own image name if you used a different name during the build process.
 
+
+## Usage
+
+This implementation is designed for offline Docker usage and is intended for use on your local machine only. You can deploy and run the Docker container locally to perform iris classification tasks. If you wish to deploy it in a production environment or make it accessible over a network, additional configuration and setup will be required.
+
+
 ## Contributing
 
 Contributions are welcome! If you have alternative solutions, improvements, or additional resources, please feel free to submit a pull request. For major changes, please open an issue first to discuss what you would like to change.
@@ -104,9 +112,3 @@ Contributions are welcome! If you have alternative solutions, improvements, or a
 3. Commit your changes (git commit -m 'Add some AmazingFeature')
 4. Push to the branch (git push origin feature/AmazingFeature)
 5. Open a pull request
-
-
-
-## Usage
-
-Currently its a offline Docker implementation. You can only use it on your local machine.
