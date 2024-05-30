@@ -68,6 +68,18 @@ The trained model is packaged into a Docker container to ensure consistency and 
     docker run --rm --it iris-classification:latest
     ```
 
+## Contributing
+
+Contributions are welcome! If you have alternative solutions, improvements, or additional resources, please feel free to submit a pull request. For major changes, please open an issue first to discuss what you would like to change.
+
+	1. Fork the repository
+	2. Create your feature branch (git checkout -b feature/AmazingFeature)
+	3. Commit your changes (git commit -m 'Add some AmazingFeature')
+	4. Push to the branch (git push origin feature/AmazingFeature)
+	5. Open a pull request
+
+
+
 ## Usage
 
 Currently its a offline Docker implementation. You can only use it on your local machine.
