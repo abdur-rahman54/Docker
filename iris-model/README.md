@@ -48,6 +48,13 @@ The trained model is packaged into a Docker container to ensure consistency and 
 
 - Docker installed on your machine
 
+If you dont have Docker on your machine then follow this step:
+
+For Ubuntu or debain linux
+```
+sudo apt install docker.io
+```
+
 ## Installation
 
 ### Steps
@@ -55,7 +62,7 @@ The trained model is packaged into a Docker container to ensure consistency and 
 1. Clone the repository:
     ```bash
     git clone https://github.com/abdur-rahman54/Docker.git
-    cd Docker/ai_model_docker
+    cd Docker/iris-model
     ```
 
 2. Build the Docker image:
