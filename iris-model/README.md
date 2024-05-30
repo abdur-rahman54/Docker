@@ -107,7 +107,6 @@ This implementation is designed for offline Docker usage and is intended for use
 
 Contributions to this project are welcome! Whether you want to suggest improvements, report issues, or contribute code, feel free to get involved. Please refer to the contribution guidelines outlined in this repository.
 
-- check 
 
 ## License
 
