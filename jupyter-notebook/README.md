@@ -5,6 +5,7 @@ This repository contains a Dockerfile for building a Docker image that runs Jupy
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
+- [Dockerfile](#dockerfile)
 - [Build the Docker Image](#build-the-docker-image)
 - [Run the Docker Container](#run-the-docker-container)
 - [Automate Versioning with GitHub Actions](#automate-versioning-with-github-actions)
@@ -14,6 +15,14 @@ This repository contains a Dockerfile for building a Docker image that runs Jupy
 
 - Docker installed on your machine. You can download(Windows version) it from [here](https://www.docker.com/products/docker-desktop).
 - A Docker Hub account if you plan to push your images to Docker Hub.
+
+To install Docker on Ubuntu or Debian Linux:
+```
+sudo apt install docker.io
+```
+
+## Dockerfile
+Dockerfile explanation
 
 ## Build the Docker Image
 
