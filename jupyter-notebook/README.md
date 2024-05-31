@@ -12,7 +12,7 @@ This repository contains a Dockerfile for building a Docker image that runs Jupy
 
 ## Prerequisites
 
-- Docker installed on your machine. You can download it from [here](https://www.docker.com/products/docker-desktop).
+- Docker installed on your machine. You can download(Windows version) it from [here](https://www.docker.com/products/docker-desktop).
 - A Docker Hub account if you plan to push your images to Docker Hub.
 
 ## Build the Docker Image
@@ -20,7 +20,10 @@ This repository contains a Dockerfile for building a Docker image that runs Jupy
 To build the Docker image, navigate to the directory containing the Dockerfile and run the following command:
 
 ```sh
-docker build -t jupyter:alpine .
+docker build -t jupyter .
+```
 
-## Run the Docker images
-sudo docker run -p 8888:8888 -v $(pwd)/notebooks:/notebooks jupyter:alpine
+Run the Docker images
+```
+sudo docker run -p 8888:8888 -v $(pwd)/notebooks:/notebooks jupyter
+```
