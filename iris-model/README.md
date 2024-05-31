@@ -56,9 +56,7 @@ Windows user can download Docker from [here](https://www.docker.com/products/doc
 
 ### Deployment
 
-First you need to make a file named _Dockerfile_.
-
-Here is an overview of what Dockerfile, along with an explanation of each step:
+First, you need to create a file named _Dockerfile_. This file is a text document that contains all the commands a user could call on the command line to assemble an image. Here’s an overview of our project’s Dockerfile, along with an explanation of each step:
 ```
 # Use the official Python image as the base image
 FROM python:3.11-slim
