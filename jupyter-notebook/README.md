@@ -59,8 +59,9 @@ RUN apt-get update && \
 
 This section installs Jupyter Notebook along with any necessary dependencies:
 
-	- l hgfh l `apt-get update` updates the package lists.
-	- ll l `apt-get install -y --no-install-recommends build-essential` installs essential build tools without unnecessary packages.
+	- apt-get update updates the package lists.
+	- apt-get install -y --no-install-recommends build-essential installs essential build tools without unnecessary packages.
+
 	- jd gjk `pip install --no-cache-dir jupyter` installs Jupyter Notebook using pip.
 	- f gh `apt-get purge -y build-essential` removes the build tools to reduce the image size.
 	-  gh fgh`apt-get autoremove -y` and `rm -rf /var/lib/apt/lists/*` clean up unnecessary files to further reduce the image size.
