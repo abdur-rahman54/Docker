@@ -1,35 +1,8 @@
-# Stage 1: Build stage with all dependencies
-FROM python:3.12-alpine as build-stage
-
+FROM python:3.11-slim
 LABEL maintainer="Abdur Rahman"
-LABEL version="alpine"
 
-# Install build dependencies
-RUN apk add --no-cache \
-        gcc \
-        musl-dev \
-        linux-headers \
-        python3-dev \
-        libffi-dev \
-        openssl-dev
-
-# Install Jupyter Notebook and dependencies
+# Install Jupyter Notebook and dependencies in a single RUN command
 RUN pip install --no-cache-dir jupyter
-
-# Stage 2: Final stage with minimal runtime environment
-FROM python:3.12-alpine
-
-LABEL maintainer="Abdur Rahman"
-LABEL version="alpine"
-
-# Install runtime dependencies
-RUN apk add --no-cache \
-        libffi \
-        openssl
-
-# Copy only the installed packages from the build stage
-COPY --from=build-stage /usr/local/lib/python3.12/site-packages /usr/local/lib/python3.12/site-packages
-COPY --from=build-stage /usr/local/bin /usr/local/bin
 
 # Create a directory for the notebook
 WORKDIR /notebooks
