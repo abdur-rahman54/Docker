@@ -42,8 +42,6 @@ A simple machine learning model is created using the following steps:
 
 The trained model is packaged into a Docker container to ensure consistency and ease of deployment across different environments. The Docker container includes all necessary dependencies and the model itself.
 
-
-
 ### Prerequisites
 
 - Docker installed on your machine
@@ -55,6 +53,61 @@ For Ubuntu or Debian Linux:
 sudo apt install docker.io
 ```
 Windows user can download Docker from [here](https://www.docker.com/products/docker-desktop/)
+
+### Deployment
+
+First you need to make a file named Dockerfile.
+Here is an overview of what Dockerfile, along with an explanation of each step:
+```
+# Use the official Python image as the base image
+FROM python:3.11-slim
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the necessary files into the container
+COPY final_code.py requirements.txt ai_model.pkl .
+
+# Install any necessary build dependencies temporarily
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Command to run the Python script when the container starts
+CMD ["python", "final_app.py"]
+
+```
+
+### Explanation of the Dockerfile
+
+1. Base Image:
+```
+FROM python:3.11-slim
+```
+This line specifies the base image for the Docker container. In this case, it uses a slim version of Python 3.11, which is a lightweight image with the Python runtime.
+
+2. Set Working Directory:
+```
+WORKDIR /app
+```
+This sets the working directory inside the container to /app. All subsequent commands will be run from this directory.
+
+3. Copy Files:
+```
+COPY final_code.py requirements.txt ai_model.pkl .
+```
+This command copies all listed files from your current directory on the host machine to the working directory (/app) inside the Docker container.
+
+4. Install Dependencies:
+```
+RUN pip install --no-cache-dir -r requirements.txt
+```
+This installs the Python dependencies specified in the requirements.txt file. The --no-cache-dir option prevents pip from caching the packages, reducing the image size.
+
+5. Command to Run:
+```
+CMD ["python", "final_code.py"]
+```
+This specifies the command that will run when the container starts. In this case, it will run the final_code.py Python script.
+
 
 ## Installation
 
