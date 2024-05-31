@@ -23,6 +23,7 @@ Before you can build and run the Docker image for Jupyter Notebook, ensure you h
 	```
 2. Git (optional, for cloning the repository):
 	- Install Git from the [official Git website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+	
 	To clone the repository:
 	```
 	git clone https://github.com/abdur-rahman54/Docker.git
@@ -58,11 +59,13 @@ RUN apt-get update && \
 
 This section installs Jupyter Notebook along with any necessary dependencies:
 
-	- `apt-get update` updates the package lists.
-	- `apt-get install -y --no-install-recommends build-essential` installs essential build tools without unnecessary packages.
+	 `apt-get update` updates the package lists.
+	 `apt-get install -y --no-install-recommends build-essential` installs essential build tools without unnecessary packages.
 	- `pip install --no-cache-dir jupyter` installs Jupyter Notebook using pip.
 	- `apt-get purge -y build-essential` removes the build tools to reduce the image size.
 	- `apt-get autoremove -y` and `rm -rf /var/lib/apt/lists/*` clean up unnecessary files to further reduce the image size.
+
+check
 
 ```	
 # Create a non-root user and set up permissions
