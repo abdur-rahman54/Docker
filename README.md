@@ -22,17 +22,18 @@ Before you can build and run the Docker image for Jupyter Notebook, ensure you h
 	```
 
 ## Build the Docker image: 
-	To build the Docker image, use the following command format:
+
+To build the Docker image, use the following command format:
 	
 	```
 	docker build -t <image name> .
 	```
 
-	Note: You can use any name you prefer for the image instead of `iris-classification`. Don't forget to include the dot (`.`) at the end of the command to specify the current directory as the build context.
+Note: You can use any name you prefer for the image instead of `iris-classification`. Don't forget to include the dot (`.`) at the end of the command to specify the current directory as the build context.
 
 ## Run the Docker container: 
 
-	To run a Docker container from the Docker image, use this command format:
+To run a Docker container from the Docker image, use this command format:
 
 	```
 	docker run <image name>
