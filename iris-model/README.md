@@ -66,7 +66,7 @@ FROM python:3.11-slim
 WORKDIR /app
 
 # Copy the necessary files into the container
-COPY final_code.py requirements.txt ai_model.pkl .
+COPY final_code.py requirements.txt ai_model.pkl ./
 
 # Install any necessary build dependencies temporarily
 RUN pip install --no-cache-dir -r requirements.txt
@@ -79,34 +79,34 @@ CMD ["python", "final_app.py"]
 ### Explanation of the Dockerfile
 
 1. Base Image:
-```
-FROM python:3.11-slim
-```
-This line specifies the base image for the Docker container. In this case, it uses a slim version of Python 3.11, which is a lightweight image with the Python runtime.
+	```
+	FROM python:3.11-slim
+	```
+	This line specifies the base image for the Docker container. In this case, it uses a slim version of Python 3.11, which is a lightweight image with the Python runtime.
 
 2. Set Working Directory:
-```
-WORKDIR /app
-```
-This sets the working directory inside the container to /app. All subsequent commands will be run from this directory.
+	```
+	WORKDIR /app
+	```
+	This sets the working directory inside the container to /app. All subsequent commands will be run from this directory.
 
 3. Copy Files:
-```
-COPY final_code.py requirements.txt ai_model.pkl .
-```
-This command copies all listed files from your current directory on the host machine to the working directory (/app) inside the Docker container.
+	```
+	COPY final_app.py requirements.txt ai_model.pkl ./
+	```
+	This command copies all listed files from your current directory on the host machine to the working directory (/app) inside the Docker container.
 
 4. Install Dependencies:
-```
-RUN pip install --no-cache-dir -r requirements.txt
-```
-This installs the Python dependencies specified in the requirements.txt file. The --no-cache-dir option prevents pip from caching the packages, reducing the image size.
+	```
+	RUN pip install --no-cache-dir -r requirements.txt
+	```
+	This installs the Python dependencies specified in the requirements.txt file. The --no-cache-dir option prevents pip from caching the packages, reducing the image size.
 
 5. Command to Run:
-```
-CMD ["python", "final_code.py"]
-```
-This specifies the command that will run when the container starts. In this case, it will run the final_code.py Python script.
+	```
+	CMD ["python", "final_code.py"]
+	```
+	This specifies the command that will run when the container starts. In this case, it will run the final_code.py Python script.
 
 
 ## Installation
