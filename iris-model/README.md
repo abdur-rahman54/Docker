@@ -1,4 +1,4 @@
-# Iris Classification AI Model
+# Iris Classification AI Model Deployment
 
 This project serves as a beginner-friendly guide to deploying an AI model using Docker. It demonstrates a simple AI model for classifying Iris flowers using the famous Iris dataset from sklearn. The model is trained using machine learning techniques and then deployed using Docker for easy distribution and usage.
 
@@ -56,7 +56,7 @@ Windows user can download Docker from [here](https://www.docker.com/products/doc
 
 ### Deployment
 
-First, you need to create a file named _Dockerfile_. This file is a text document that contains all the commands a user could call on the command line to assemble an image. Here’s an overview of our project’s Dockerfile, along with an explanation of each step:
+First, you need to create a file named `Dockerfile`. This file is a text document that contains all the commands a user could call on the command line to assemble an image. Here’s an overview of our project’s `Dockerfile`, along with an explanation of each step:
 ```
 # Use the official Python image as the base image
 FROM python:3.11-slim
@@ -87,25 +87,25 @@ CMD ["python", "docker-model.py"]
 	```
 	WORKDIR /app
 	```
-	This sets the working directory inside the container to /app. All subsequent commands will be run from this directory.
+	This sets the working directory inside the container to `/app`. All subsequent commands will be run from this directory.
 
 3. Copy Files:
 	```
 	COPY docker-model.py requirements.txt model.pkl ./
 	```
-	This command copies all listed files from your current directory on the host machine to the working directory (/app) inside the Docker container.
+	This command copies all listed files from your current directory on the host machine to the working directory (`/app`) inside the Docker container.
 
 4. Install Dependencies:
 	```
 	RUN pip install --no-cache-dir -r requirements.txt
 	```
-	This installs the Python dependencies specified in the requirements.txt file. The --no-cache-dir option prevents pip from caching the packages, reducing the image size.
+	This installs the Python dependencies specified in the `requirements.txt` file. The `--no-cache-dir` option prevents pip from caching the packages, reducing the image size.
 
 5. Command to Run:
 	```
 	CMD ["python", "docker-model.py"]
 	```
-	This specifies the command that will run when the container starts. In this case, it will run the docker-model.py Python script.
+	This specifies the command that will run when the container starts. In this case, it will run the `docker-model.py` Python script.
 
 
 ## Installation
@@ -113,39 +113,41 @@ CMD ["python", "docker-model.py"]
 ### Steps
 
 1. Clone the repository: 
-First, clone the GitHub repository to your desired location. Use the following commands:
+	First, clone the GitHub repository to your desired location. Use the following commands:
 
     ```bash
     git clone https://github.com/abdur-rahman54/Docker.git
     cd Docker/iris-model
     ```
-This will download the repository and navigate into the iris-model directory, where you can proceed with the next steps.
+	This will download the repository and navigate into the iris-model directory, where you can proceed with the next steps.
 
 2. Build the Docker image: 
 	To build the Docker image, use the following command format:
 	```
 	docker build -t <image name> .
 	```
-	For example, to build an image named iris-classification:
+	For example, to build an image named `iris-classification`:
 
     ```bash
     docker build -t iris-classification .
     ```
-	Note: You can use any name you prefer for the image instead of iris-classification. Don't forget to include the dot (.) at the end of the command to specify the current directory as the build context.
+	Note: You can use any name you prefer for the image instead of `iris-classification`. Don't forget to include the dot (`.`) at the end of the command to specify the current directory as the build context.
 
-3. Run the Docker container: To run a Docker container from the Docker image, use this command format:
+3. Run the Docker container: 
+
+	To run a Docker container from the Docker image, use this command format:
 
 	```
 	docker run <image name>
 	```
-	Since we named the image iris-classification in the previous step, we can use that name to run the container:
+	Since we named the image `iris-classification` in the previous step, we can use that name to run the container:
 
     ```bash
     docker run --rm -it iris-classification
     ```
 	In this command:
-	- --rm: Automatically removes the container when it exits. This helps to keep your system clean by removing unnecessary containers.
-	- -it: Combines two flags, -i (interactive) and -t (pseudo-TTY). This allows you to interact with the container via the terminal.
+	- `--rm`: Automatically removes the container when it exits. This helps to keep your system clean by removing unnecessary containers.
+	- `-it`: Combines two flags, `-i` (interactive) and `-t` (pseudo-TTY). This allows you to interact with the container via the terminal.
 
 	You should replace 'iris-classification' with your own image name if you used a different name during the build process.
 
