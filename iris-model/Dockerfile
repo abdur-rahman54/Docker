@@ -11,5 +11,5 @@ COPY final_app.py requirements.txt ai_model.pkl ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Command to run the Python script when the container starts
-CMD ["python", "final_app.py"]
+CMD ["python", "docker-model.py"]
 
