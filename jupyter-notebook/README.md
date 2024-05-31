@@ -65,7 +65,7 @@ This section installs Jupyter Notebook along with any necessary dependencies:
 - `apt-get purge -y build-essential` removes the build tools to reduce the image size.
 - `apt-get autoremove -y` and `rm -rf /var/lib/apt/lists/*` clean up unnecessary files to further reduce the image size.
 
-fgh fgh fgh
+
 
 ```	
 # Create a non-root user and set up permissions
@@ -76,9 +76,10 @@ RUN chown -R jupyteruser:jupyteruser /home/jupyteruser/notebooks
 
 This section enhances security by creating a non-root user:
 	
-	- `useradd -m jupyteruser` creates a new user named `jupyteruser`.
-	- `WORKDIR /home/jupyteruser/notebooks` sets the working directory for subsequent instructions to `/home/jupyteruser/notebooks`.
-	- `chown -R jupyteruser:jupyteruser /home/jupyteruser/notebooks` changes the ownership of the notebooks directory to the new user.
+- `useradd -m jupyteruser` creates a new user named `jupyteruser`.
+- `WORKDIR /home/jupyteruser/notebooks` sets the working directory for subsequent instructions to `/home/jupyteruser/notebooks`.
+- `chown -R jupyteruser:jupyteruser /home/jupyteruser/notebooks` changes the ownership of the notebooks directory to the new user.
+
 	
 ```
 # Expose the Jupyter Notebook port
@@ -100,11 +101,11 @@ ENTRYPOINT ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--no-browser"
 
 Finally, this line sets the default command to run when the container starts:
 
-	- `jupyter notebook` starts the Jupyter Notebook server.
-	- `--ip=0.0.0.0` makes the server accessible from any network interface.
-	- `--port=8888` sets the server to run on port 8888.
-	- `--no-browser` prevents the server from trying to open a web browser.
-	- `--allow-root` allows the notebook to be run as the root user, which is needed because Docker containers often run as root.
+- `jupyter notebook` starts the Jupyter Notebook server.
+- `--ip=0.0.0.0` makes the server accessible from any network interface.
+- `--port=8888` sets the server to run on port 8888.
+- `--no-browser` prevents the server from trying to open a web browser.
+- `--allow-root` allows the notebook to be run as the root user, which is needed because Docker containers often run as root.
 
 ## Build the Docker Image
 
@@ -134,8 +135,8 @@ Once the image is built, you can run it using the `docker run` command. This com
 sudo docker run -p 8888:8888 -v $(pwd)/notebooks:/notebooks jupyter
 ```
 
-	- `-p 8888:8888` maps port 8888 on your local machine to port 8888 in the container, making the Jupyter Notebook accessible at `http://localhost:8888`.
-	- `-v $(pwd)/notebooks:/home/jupyteruser/notebooks` mounts the `notebooks` directory from your current path to the `/home/jupyteruser/notebooks` directory in the container, ensuring your notebooks are stored on your host machine. If you want to work with your existing notebooks, navigate to their directory first, then run this command, replacing `$(pwd)/notebooks` with the appropriate directory path. All other parts of the command remain the same.
+- `-p 8888:8888` maps port 8888 on your local machine to port 8888 in the container, making the Jupyter Notebook accessible at `http://localhost:8888`.
+- `-v $(pwd)/notebooks:/home/jupyteruser/notebooks` mounts the `notebooks` directory from your current path to the `/home/jupyteruser/notebooks` directory in the container, ensuring your notebooks are stored on your host machine. If you want to work with your existing notebooks, navigate to their directory first, then run this command, replacing `$(pwd)/notebooks` with the appropriate directory path. All other parts of the command remain the same.
 	
 After running the container, you will see a URL in the terminal output that you can open in your web browser to access the Jupyter Notebook interface.
 
@@ -144,5 +145,5 @@ After running the container, you will see a URL in the terminal output that you 
 
 This Docker image for Jupyter Notebook is maintained by `Abdur Rahman` nnn.
 
-	- GitHub: github.com/abdur-rahman54
-	- Email: abdur.rahman59354@gmail.com
+- GitHub: github.com/abdur-rahman54
+- Email: abdur.rahman59354@gmail.com
