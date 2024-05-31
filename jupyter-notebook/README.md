@@ -138,12 +138,12 @@ For this case:
 	- `-p 8888:8888` maps port 8888 on your local machine to port 8888 in the container, making the Jupyter Notebook accessible at `http://localhost:8888`.
 	- `-v $(pwd)/notebooks:/home/jupyteruser/notebooks` mounts the `notebooks` directory from your current path to the `/home/jupyteruser/notebooks` directory in the container, ensuring your notebooks are stored on your host machine. If you want to work with your existing notebooks, navigate to their directory first, then run this command, replacing `$(pwd)/notebooks` with the appropriate directory path. All other parts of the command remain the same.
 	
-	After running the container, you will see a URL in the terminal output that you can open in your web browser to access the Jupyter Notebook interface.
+After running the container, you will see a URL in the terminal output that you can open in your web browser to access the Jupyter Notebook interface.
 
 
 ## Maintainer
 
 This Docker image for Jupyter Notebook is maintained by __Abdur Rahman__.
 
-- GitHub: github.com/abdur-rahman54
+- GitHub: [github.com/abdur-rahman54](github.com/abdur-rahman54)
 - Email: abdur.rahman59354@gmail.com
