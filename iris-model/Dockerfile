@@ -5,11 +5,11 @@ FROM python:3.11-slim
 WORKDIR /app
 
 # Copy the necessary files into the container
-COPY . .
+COPY final_app.py requirements.txt ai_model.pkl ./
 
 # Install any necessary build dependencies temporarily
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Command to run the Python script when the container starts
-CMD ["python", "final_code.py"]
+CMD ["python", "final_app.py"]
 
