@@ -13,7 +13,7 @@ This repository contains a Dockerfile for building a Docker image that runs Jupy
 ## Prerequisites
 
 Before you can build and run the Docker image for Jupyter Notebook, ensure you have the following prerequisites installed on your system:
-1. Docker:
+1. __Docker__:
 	- Install Docker from the [official Docker website](https://www.docker.com/products/docker-desktop).
 	- A Docker Hub account if you plan to push your images to Docker Hub.
 
@@ -21,7 +21,7 @@ Before you can build and run the Docker image for Jupyter Notebook, ensure you h
 	```
 	sudo apt install docker.io
 	```
-2. Git (optional, for cloning the repository):
+2. __Git__ (optional, for cloning the repository):
 	- Install Git from the [official Git website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 	
 	To clone the repository:
@@ -92,7 +92,7 @@ This line informs Docker that the container will listen on port 8888 at runtime.
 USER jupyteruser
 ```
 
-This instruction switches the user context to jupyteruser, ensuring that the Jupyter Notebook runs with non-root privileges, enhancing security.
+This instruction switches the user context to `jupyteruser`, ensuring that the Jupyter Notebook runs with non-root privileges, enhancing security.
 
 ```
 # Set the entrypoint to Jupyter Notebook
@@ -112,7 +112,7 @@ Finally, this line sets the default command to run when the container starts:
 To build the Docker image for Jupyter Notebook, follow these steps:
 
 1. Navigate to the directory containing the Dockerfile:
-Open a terminal and change to the directory where your Dockerfile is located.
+Open a terminal and change to the directory where your `Dockerfile` is located.
 For this case:
 
 	```
@@ -125,7 +125,7 @@ Use the `docker build` command to create the Docker image. The `-t` flag tags th
 ```sh
 docker build -t jupyter .
 ```
-This command will read the Dockerfile in the current directory (denoted by `.`) and build the image with the specified tag.
+This command will read the `Dockerfile` in the current directory (denoted by `.`) and build the image with the specified tag.
 
 3. Run the Docker container:
 
@@ -143,7 +143,7 @@ After running the container, you will see a URL in the terminal output that you 
 
 ## Maintainer
 
-This Docker image for Jupyter Notebook is maintained by `Abdur Rahman` nnn.
+This Docker image for Jupyter Notebook is maintained by __Abdur Rahman__.
 
 - GitHub: github.com/abdur-rahman54
 - Email: abdur.rahman59354@gmail.com
