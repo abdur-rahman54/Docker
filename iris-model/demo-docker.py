@@ -6,7 +6,7 @@ from sklearn.datasets import load_iris
 iris = load_iris()
 
 # Load the trained model
-with open('ai_model.pkl', 'rb') as f:
+with open('model.pkl', 'rb') as f:
     model = pickle.load(f)
 
 # Mapping predicted class to actual class label

@@ -69,7 +69,7 @@ def main():
     iris = load_iris()
     target_names = iris['target_names']
 
-    model_path = 'ai_model.pkl'
+    model_path = 'model.pkl'
     #print(f"Loading model from {model_path}...")
     model = load_model(model_path)
 
