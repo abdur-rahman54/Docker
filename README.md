@@ -29,7 +29,7 @@ To build the Docker image, use the following command format:
 	docker build -t <image name> .
 	```
 
-Note: You can use any name you prefer for the image instead of `iris-classification`. Don't forget to include the dot (`.`) at the end of the command to specify the current directory as the build context.
+Note: Don't forget to include the dot (`.`) at the end of the command to specify the current directory as the build context.
 
 ## Run the Docker container: 
 
