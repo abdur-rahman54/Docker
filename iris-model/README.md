@@ -184,7 +184,7 @@ You can continue to input new values for additional predictions. To exit the con
 
 ## Contributing
 
-Contributions to this project are welcome! Whether you want to suggest improvements, report issues, or contribute code, feel free to get involved. Please refer to the contribution guidelines outlined in this repository.
+Contributions to this project are welcome! Whether you want to suggest improvements, report issues, or contribute code, feel free to get involved.
 
 
 ## License

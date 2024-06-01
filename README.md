@@ -32,7 +32,12 @@ Before you can build and run the Docker image, ensure you have the following pre
 	```
 2. __Git__ (optional): Required if you want to clone this repository.
 	- Install Git from the [official Git website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
-	
+
+	To install __Git__ on Ubuntu or Debian Linux:
+	```
+	sudo apt install git
+	```
+
 3. __Python__ (Optional): Required only if you want to run the Python code locally on your machine.
 	- Install Python from the [official Python website](https://www.python.org/downloads/).
 	
@@ -77,7 +82,7 @@ This Docker image for Jupyter Notebook is maintained by __Abdur Rahman__.
 
 ## Contributing
 
-Contributions to this project are welcome! Whether you want to suggest improvements, report issues, or contribute code, feel free to get involved. Please refer to the contribution guidelines outlined in this repository.
+Contributions to this project are welcome! Whether you want to suggest improvements, report issues, or contribute code, feel free to get involved.
 
 
 ## License
