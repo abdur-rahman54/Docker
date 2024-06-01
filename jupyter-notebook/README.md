@@ -142,7 +142,7 @@ After running the container, you will see a URL in the terminal output that you 
 
 ![jupyter trminal](https://github.com/abdur-rahman54/Docker/blob/main/jupyter-notebook/images/Jupytr%20Terminal.jpg)
 
-To cancel the terminal, simply press the ‘Ctrl’ and ‘C’ buttons.
+To cancel the terminal, simply press the `Ctrl` and `C` buttons.
 
 ## Maintainer
 
