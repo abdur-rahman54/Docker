@@ -6,7 +6,7 @@ __pycache__/
 # C extensions
 *.so
 
-# Personal script files
+# My Personal script files
 git_update
 
 
