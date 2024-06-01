@@ -141,6 +141,10 @@ For this case:
 After running the container, you will see a URL in the terminal output that you can open in your web browser to access the Jupyter Notebook interface.
 
 
+
+
+![jupyter trminal](https://github.com/abdur-rahman54/Docker/blob/main/jupyter-notebook/images/Jupytr%20IP.jpg)
+
 ## Maintainer
 
 This Docker image for Jupyter Notebook is maintained by __Abdur Rahman__.
