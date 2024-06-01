@@ -156,17 +156,15 @@ CMD ["python", "docker-model.py"]
 
 This implementation is designed for offline Docker usage and is intended for use on your local machine only. You can deploy and run the Docker container locally to perform iris classification tasks. If you wish to deploy it in a production environment or make it accessible over a network, additional configuration and setup will be required.
 
-After running the container, it will show this picture. It will ask a input, after give the it will predict using the model and show the result.
-
 After running the container, you will be prompted to input the features of an iris flower as shown below:
 
-![Initial Prompt](https://github.com/abdur-rahman54/Docker/blob/main/iris-model/images/first.PNG)
+![Initial Prompt](https://github.com/abdur-rahman54/Docker/blob/main/iris-model/images/Initial%20Prompt.jpg)
 
 Enter the four numeric features (sepal length, sepal width, petal length, petal width) separated by spaces. For example: `5.1 3.5 1.4 0.2`
 
 The model will process the input and provide a classification result:
 
-![Prediction Result](https://github.com/abdur-rahman54/Docker/blob/main/iris-model/images/second.PNG)
+![Prediction Result](https://github.com/abdur-rahman54/Docker/blob/main/iris-model/images/Prediction%20Result.jpg)
 
 You can continue to input new values for additional predictions. To exit the container, simply type `exit`.
 
