@@ -156,13 +156,30 @@ CMD ["python", "docker-model.py"]
 
 This implementation is designed for offline Docker usage and is intended for use on your local machine only. You can deploy and run the Docker container locally to perform iris classification tasks. If you wish to deploy it in a production environment or make it accessible over a network, additional configuration and setup will be required.
 
+After running the container, it will show this picture. It will ask a input, after give the it will predict using the model and show the result.
+
+After running the container, you will be prompted to input the features of an iris flower as shown below:
+
+![Initial Prompt](https://github.com/abdur-rahman54/Docker/blob/main/iris-model/images/first.PNG)
+
+Enter the four numeric features (sepal length, sepal width, petal length, petal width) separated by spaces. For example: `5.1 3.5 1.4 0.2`
+
+The model will process the input and provide a classification result:
+
+![Prediction Result](https://github.com/abdur-rahman54/Docker/blob/main/iris-model/images/second.PNG)
+
+You can continue to input new values for additional predictions. To exit the container, simply type `exit`.
+
+## Files
+
+- [docker-model.py](docker-model.py): The main Python script that loads the model and handles user input.
+- [requirements.txt](requirements.txt): Contains the Python dependencies required for the project.
+- `model.pkl`: The pre-trained machine learning model. You can find the code in the file named [iris_model.py](iris_model.py).
+- [Dockerfile](Dockerfile): Instructions to build the Docker image.
 
 ## Contributing
 
 Contributions to this project are welcome! Whether you want to suggest improvements, report issues, or contribute code, feel free to get involved. Please refer to the contribution guidelines outlined in this repository.
-
-![Image 1](https://github.com/abdur-rahman54/Docker/blob/main/iris-model/images/first.PNG)
-![Image 2](https://github.com/abdur-rahman54/Docker/blob/main/iris-model/images/second.PNG)
 
 
 ## License
