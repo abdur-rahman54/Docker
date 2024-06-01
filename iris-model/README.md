@@ -44,15 +44,20 @@ The trained model is packaged into a Docker container to ensure consistency and 
 
 ### Prerequisites
 
-- Docker installed on your machine
+__Docker__:
 
-If Docker is not already installed, follow these steps:
+	- Docker installed on your machine
 
-For Ubuntu or Debian Linux:
-```
-sudo apt install docker.io
-```
-Windows user can download Docker from [here](https://www.docker.com/products/docker-desktop/)
+	If Docker is not already installed, follow these steps:
+
+	For Ubuntu or Debian Linux:
+	```
+	sudo apt install docker.io
+	```
+	Windows user can download Docker from [here](https://www.docker.com/products/docker-desktop/)
+
+__Python__ (Optional): Required only if you want to run the Python code locally on your machine. 
+	- Install Python from the [official Python website](https://www.python.org/downloads/).
 
 ### Deployment
 

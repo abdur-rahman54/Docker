@@ -8,7 +8,7 @@ This repository contains a Dockerfile for building a Docker image that runs Jupy
 - [Dockerfile](#dockerfile)
 - [Build the Docker Image](#build-the-docker-image)
 - [Run the Docker Container](#run-the-docker-container)
-- [Maintainer](#maintainer)
+
 
 ## Prerequisites
 
@@ -144,9 +144,3 @@ After running the container, you will see a URL in the terminal output that you 
 
 To terminate the terminal session, simply press `Ctrl + C`.
 
-## Maintainer
-
-This Docker image for Jupyter Notebook is maintained by __Abdur Rahman__.
-
-- GitHub: [github.com/abdur-rahman54](github.com/abdur-rahman54)
-- Email: abdur.rahman59354@gmail.com

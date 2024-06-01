@@ -18,9 +18,6 @@ This repository contains two projects that demonstrate the use of Docker for dif
 - [Prerequisites](prerequisites)
 - [Docker Explanation](#docker-explanation)
 - [Project Overview](#project-overview)
-- [Docker Deployment](#docker-deployment)
-- [Installation](#installation)
-- [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -36,9 +33,15 @@ Before you can build and run the Docker image for Jupyter Notebook, ensure you h
 	```
 	sudo apt install docker.io
 	```
-2. __Git__ (optional, for cloning the repository):
+2. __Git__ (optional): For cloning the repository
 	- Install Git from the [official Git website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 	
+3. __Python__ (Optional): Required only if you want to run the Python code locally on your machine.
+	- Install Python from the [official Python website](https://www.python.org/downloads/).
+	
+## Docker Explanation
+
+Docker is a powerful platform designed to simplify the creation, deployment, and running of applications by using containerization technology. It allows developers to package applications and their dependencies into lightweight, portable containers that can run consistently across any environment. By using Docker, you can ensure that your applications are easily deployable, scalable, and maintainable, with a consistent setup that reduces compatibility issues and streamlines the development workflow.
 
 ### Build the Docker image: 
 
@@ -63,4 +66,18 @@ To run a Docker container from the Docker image, use this command format:
 This repository contains two projects that demonstrate the use of Docker for different applications:
 
 1. [iris-model](./iris-model): Developing and deploying an AI model for iris flower classification using Docker.
+
 2. [jupyter-notebook](./jupyter-notebook): Building and running a Jupyter Notebook using Docker.
+
+
+## Maintainer
+
+This Docker image for Jupyter Notebook is maintained by __Abdur Rahman__.
+
+- GitHub: [github.com/abdur-rahman54](github.com/abdur-rahman54)
+- LinkedIn: [https://www.linkedin.com/in/abdur-rahman55/](https://www.linkedin.com/in/abdur-rahman55/)
+- Email: abdur.rahman59354@gmail.com
+
+## License
+
+This project is licensed under the [MIT License](./LICENSE), allowing for open collaboration and distribution of the code.
