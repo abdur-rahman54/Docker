@@ -161,8 +161,8 @@ This implementation is designed for offline Docker usage and is intended for use
 
 Contributions to this project are welcome! Whether you want to suggest improvements, report issues, or contribute code, feel free to get involved. Please refer to the contribution guidelines outlined in this repository.
 
-![Image 1](./image/frist.PNG)
-![Image 2](./image/second.PNG)
+![Image 1](./image/first.PNG)
+![Image 2](https://github.com/abdur-rahman54/Docker/blob/main/iris-model/images/second.PNG)
 
 
 ## License
