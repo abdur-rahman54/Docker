@@ -44,24 +44,22 @@ The trained model is packaged into a Docker container to ensure consistency and 
 
 ### Prerequisites
 
-__Docker__:
+1. __Docker__:
 
-	- Docker installed on your machine
-
-	If Docker is not already installed, follow these steps:
-
-	For Ubuntu or Debian Linux:
+	- Ensure Docker is installed on your machine.
+	- For Ubuntu or Debian Linux, use:
 	```
 	sudo apt install docker.io
 	```
-	Windows user can download Docker from [here](https://www.docker.com/products/docker-desktop/)
+	- For Windows, download Docker from [here](https://www.docker.com/products/docker-desktop/)
 
-__Python__ (Optional): Required only if you want to run the Python code locally on your machine. 
+2. __Python__ (Optional): Required only if you want to run the Python code locally on your machine. 
 	- Install Python from the [official Python website](https://www.python.org/downloads/).
 
 ### Deployment
 
-First, you need to create a file named `Dockerfile`. This file is a text document that contains all the commands a user could call on the command line to assemble an image. Here’s an overview of our project’s `Dockerfile`, along with an explanation of each step:
+First, create a file named Dockerfile. This file contains all the commands needed to assemble the Docker image. Below is an overview of our project’s `Dockerfile`, along with an explanation of each step:
+
 ```
 # Use the official Python image as the base image
 FROM python:3.11-slim
@@ -158,11 +156,9 @@ CMD ["python", "docker-model.py"]
 
 
 ## Usage
+This implementation is designed for offline Docker usage on your local machine. If you wish to deploy it in a production environment or make it accessible over a network, additional configuration and setup will be required.
 
-This implementation is designed for offline Docker usage and is intended for use on your local machine only. You can deploy and run the Docker container locally to perform iris classification tasks. If you wish to deploy it in a production environment or make it accessible over a network, additional configuration and setup will be required.
-
-After running the container, you will be prompted to input the features of an iris flower as shown below:
-
+After running the container, you will be prompted to input the features of an iris flower.
 ![Initial Prompt](https://github.com/abdur-rahman54/Docker/blob/main/images/Initial%20Prompt.jpg)
 
 Enter the four numeric features (sepal length, sepal width, petal length, petal width) separated by spaces. For example: `5.1 3.5 1.4 0.2`

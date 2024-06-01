@@ -21,7 +21,7 @@ Before you can build and run the Docker image for Jupyter Notebook, ensure you h
 	```
 	sudo apt install docker.io
 	```
-2. __Git__ (optional, for cloning the repository):
+2. __Git__  (Optional): Required if you want to clone this repository.
 	- Install Git from the [official Git website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 	
 	To clone the repository:
@@ -30,7 +30,8 @@ Before you can build and run the Docker image for Jupyter Notebook, ensure you h
 	```
 
 ## Dockerfile
-The Dockerfile defines the steps required to build a Docker image for running Jupyter Notebook. 
+
+The `Dockerfile` defines the steps required to build a Docker image for running `Jupyter Notebook`. 
 
 Below is a detailed explanation of each part of the Dockerfile:
 
@@ -39,6 +40,7 @@ Below is a detailed explanation of each part of the Dockerfile:
 FROM python:3.11-slim
 ```
 This line specifies the base image for the Docker build. The `python:3.11-slim` image is a lightweight version of Python 3.11, which helps keep the Docker image small and efficient.
+
 
 ```
 # Metadata as labels
@@ -113,12 +115,12 @@ To build the Docker image for Jupyter Notebook, follow these steps:
 
 1. Navigate to the directory containing the Dockerfile:
 Open a terminal and change to the directory where your `Dockerfile` is located.
-For this case:
+For this project, use:
 
 	```
 	cd Docker/jupyter-notebook/
 	```
-2. Build the Docker image:
+2. Build the Docker Image:
 
 	Use the `docker build` command to create the Docker image. The `-t` flag tags the image with a name (`jupyter` in this case).
 	
@@ -127,8 +129,8 @@ For this case:
 	```
 	This command will read the `Dockerfile` in the current directory (denoted by `.`) and build the image with the specified tag.
 
-3. Run the Docker container:
-
+3. Run the Docker Container:
+	
 	Once the image is built, you can run it using the `docker run` command. This command will start a new container from the `jupyter` image, map port 8888 of the container to port 8888 on your host, and mount the current directory's `notebooks` folder to `/notebooks` inside the container.
 
 	```
