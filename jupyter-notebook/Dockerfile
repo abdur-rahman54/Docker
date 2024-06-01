@@ -1,20 +1,19 @@
 # Use a specific version tag to ensure reproducibility
-FROM python:3.11-slim
+FROM python:3.11-alpine
 
 # Metadata as labels
 LABEL maintainer="Abdur Rahman"
 LABEL description="A Docker image for running Jupyter Notebook"
 
 # Install Jupyter Notebook and dependencies
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends build-essential && \
+RUN apk update && \
+    apk add --no-cache build-base linux-headers python3-dev && \
     pip install --no-cache-dir jupyter && \
-    apt-get purge -y build-essential && \
-    apt-get autoremove -y && \
-    rm -rf /var/lib/apt/lists/*
+    apk del build-base python3-dev && \
+    rm -rf /var/cache/apk/*
 
 # Create a non-root user and set up permissions
-RUN useradd -m jupyteruser
+RUN adduser -D jupyteruser
 WORKDIR /home/jupyteruser/notebooks
 RUN chown -R jupyteruser:jupyteruser /home/jupyteruser/notebooks
 
