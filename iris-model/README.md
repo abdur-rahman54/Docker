@@ -62,7 +62,7 @@ First, create a file named Dockerfile. This file contains all the commands neede
 
 ```
 # Use the official Python image as the base image
-FROM python:3.11-slim
+FROM python:3.11-slim    # Use a specific version tag to ensure reproducibility
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -159,6 +159,7 @@ CMD ["python", "docker-model.py"]
 This implementation is designed for offline Docker usage on your local machine. If you wish to deploy it in a production environment or make it accessible over a network, additional configuration and setup will be required.
 
 After running the container, you will be prompted to input the features of an iris flower.
+
 ![Initial Prompt](https://github.com/abdur-rahman54/Docker/blob/main/images/Initial%20Prompt.jpg)
 
 Enter the four numeric features (sepal length, sepal width, petal length, petal width) separated by spaces. For example: `5.1 3.5 1.4 0.2`

@@ -17,14 +17,14 @@ Before you can build and run the Docker image for Jupyter Notebook, ensure you h
 	- Install Docker from the [official Docker website](https://www.docker.com/products/docker-desktop).
 	- A Docker Hub account if you plan to push your images to Docker Hub.
 
-	To install Docker on Ubuntu or Debian Linux:
+	- To install Docker on Ubuntu or Debian Linux:
 	```
 	sudo apt install docker.io
 	```
 2. __Git__  (Optional): Required if you want to clone this repository.
 	- Install Git from the [official Git website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 	
-	To clone the repository:
+	- To clone the repository:
 	```
 	git clone https://github.com/abdur-rahman54/Docker.git
 	```
