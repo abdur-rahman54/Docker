@@ -140,7 +140,7 @@ For this case:
 	
 After running the container, you will see a URL in the terminal output that you can open in your web browser to access the Jupyter Notebook interface.
 
-![jupyter trminal](https://github.com/abdur-rahman54/Docker/blob/main/jupyter-notebook/images/Jupytr%20Terminal.jpg)
+![jupyter trminal](https://github.com/abdur-rahman54/Docker/blob/main/images/Jupytr%20Terminal.jpg)
 
 To terminate the terminal session, simply press `Ctrl + C`.
 
