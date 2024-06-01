@@ -1,6 +1,6 @@
 # Jupyter Notebook Docker Image
 
-This repository contains a Dockerfile for building a Docker image that runs Jupyter Notebook. The image is based on the `Python 3.11 slim` variant to keep it lightweight and efficient. It includes Jupyter Notebook and all necessary dependencies, ensuring a streamlined setup for data science and development work. The Dockerfile follows best practices for security and maintainability, including running the notebook as a non-root user and minimizing the number of layers in the image.
+This repository contains a Dockerfile for building a Docker image that runs Jupyter Notebook. The image is based on the `Python 3.11 alpine` variant to keep it lightweight and efficient. It includes Jupyter Notebook and all necessary dependencies, ensuring a streamlined setup for data science and development work. The Dockerfile follows best practices for security and maintainability, including running the notebook as a non-root user and minimizing the number of layers in the image.
 
 ## Table of Contents
 
@@ -37,9 +37,9 @@ Below is a detailed explanation of each part of the Dockerfile:
 
 ```
 # Use a specific version tag to ensure reproducibility
-FROM python:3.11-slim
+FROM python:3.11-alpine
 ```
-This line specifies the base image for the Docker build. The `python:3.11-slim` image is a lightweight version of Python 3.11, which helps keep the Docker image small and efficient.
+This line specifies the base image for the Docker build. The `python:3.11-alpine` image is a lightweight version of Python 3.11, which helps keep the Docker image small and efficient.
 
 
 ```
@@ -51,34 +51,33 @@ These lines add metadata to the Docker image, including the maintainer's name an
 
 ```
 # Install Jupyter Notebook and dependencies
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends build-essential && \
+RUN apk update && \
+    apk add --no-cache build-base linux-headers python3-dev && \
     pip install --no-cache-dir jupyter && \
-    apt-get purge -y build-essential && \
-    apt-get autoremove -y && \
-    rm -rf /var/lib/apt/lists/*
+    apk del build-base python3-dev && \
+	rm -rf /var/cache/apk/*
 ```
 
 This section installs Jupyter Notebook along with any necessary dependencies:
 
-- `apt-get update` updates the package lists.
-- `apt-get install -y --no-install-recommends build-essential` installs essential build tools without unnecessary packages.
+- `apk update` updates the package lists.
+- `apk add --no-cache build-base linux-headers python3-dev` installs essential build tools without unnecessary packages.
 - `pip install --no-cache-dir jupyter` installs Jupyter Notebook using pip.
-- `apt-get purge -y build-essential` removes the build tools to reduce the image size.
-- `apt-get autoremove -y` and `rm -rf /var/lib/apt/lists/*` clean up unnecessary files to further reduce the image size.
+- `apk del build-base python3-dev` removes the build tools to reduce the image size.
+- `rm -rf /var/lib/apt/lists/*` clean up unnecessary files to further reduce the image size.
 
 
 
 ```	
 # Create a non-root user and set up permissions
-RUN useradd -m jupyteruser
+RUN adduser -D jupyteruser
 WORKDIR /home/jupyteruser/notebooks
 RUN chown -R jupyteruser:jupyteruser /home/jupyteruser/notebooks
 ```
 
 This section enhances security by creating a non-root user:
 	
-- `useradd -m jupyteruser` creates a new user named `jupyteruser`.
+- `adduser -D jupyteruser` creates a new user named `jupyteruser`.
 - `WORKDIR /home/jupyteruser/notebooks` sets the working directory for subsequent instructions to `/home/jupyteruser/notebooks`.
 - `chown -R jupyteruser:jupyteruser /home/jupyteruser/notebooks` changes the ownership of the notebooks directory to the new user.
 
