@@ -158,13 +158,13 @@ This implementation is designed for offline Docker usage and is intended for use
 
 After running the container, you will be prompted to input the features of an iris flower as shown below:
 
-![Initial Prompt](https://github.com/abdur-rahman54/Docker/blob/main/iris-model/images/Initial%20Prompt.jpg)
+![Initial Prompt](https://github.com/abdur-rahman54/Docker/blob/main/images/Initial%20Prompt.jpg)
 
 Enter the four numeric features (sepal length, sepal width, petal length, petal width) separated by spaces. For example: `5.1 3.5 1.4 0.2`
 
 The model will process the input and provide a classification result:
 
-![Prediction Result](https://github.com/abdur-rahman54/Docker/blob/main/iris-model/images/Prediction%20Result.jpg)
+![Prediction Result](https://github.com/abdur-rahman54/Docker/blob/main/images/Prediction%20Result.jpg)
 
 You can continue to input new values for additional predictions. To exit the container, simply type `exit`.
 
@@ -174,6 +174,8 @@ You can continue to input new values for additional predictions. To exit the con
 - [requirements.txt](requirements.txt): Contains the Python dependencies required for the project.
 - `model.pkl`: The pre-trained machine learning model. You can find the code in the file named [iris_model.py](iris_model.py).
 - [Dockerfile](Dockerfile): Instructions to build the Docker image.
+- [ai-model.py](ai-model.py): This file contains the basic version of the `docker-model.py` code.
+- [demo-docker.py](demo-docker.py): This file is a simplified version of the `docker-model.py` code.
 
 ## Contributing
 
