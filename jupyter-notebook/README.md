@@ -112,14 +112,15 @@ Finally, this line sets the default command to run when the container starts:
 
 To build the Docker image for Jupyter Notebook, follow these steps:
 
-1. Navigate to the directory containing the Dockerfile:
-Open a terminal and change to the directory where your `Dockerfile` is located.
-For this project, use:
+1. **Navigate to the directory containing the Dockerfile:**
+
+	Open a terminal and change to the directory where your `Dockerfile` is located.
+	For this project, use:
 
 	```
 	cd Docker/jupyter-notebook/
 	```
-2. Build the Docker Image:
+2. **Build the Docker Image:**
 
 	Use the `docker build` command to create the Docker image. The `-t` flag tags the image with a name (`jupyter` in this case).
 	
@@ -128,14 +129,15 @@ For this project, use:
 	```
 	This command will read the `Dockerfile` in the current directory (denoted by `.`) and build the image with the specified tag.
 
-3. Run the Docker Container:
+3. **Run the Docker Container:**
 	
 	Once the image is built, you can run it using the `docker run` command. This command will start a new container from the `jupyter` image, map port 8888 of the container to port 8888 on your host, and mount the current directory's `notebooks` folder to `/notebooks` inside the container.
 
 	```
-	sudo docker run -p 8888:8888 -v $(pwd)/notebooks:/notebooks jupyter
+	sudo docker run --rm -p 8888:8888 -v $(pwd)/notebooks:/notebooks jupyter
 	```
 
+	- `--rm`: Automatically removes the container when it exits. This helps to keep your system clean by removing unnecessary containers.
 	- `-p 8888:8888` maps port 8888 on your local machine to port 8888 in the container, making the Jupyter Notebook accessible at `http://localhost:8888`.
 	- `-v $(pwd)/notebooks:/home/jupyteruser/notebooks` mounts the `notebooks` directory from your current path to the `/home/jupyteruser/notebooks` directory in the container, ensuring your notebooks are stored on your host machine. If you want to work with your existing notebooks, navigate to their directory first, then run this command, replacing `$(pwd)/notebooks` with the appropriate directory path. All other parts of the command remain the same.
 	
