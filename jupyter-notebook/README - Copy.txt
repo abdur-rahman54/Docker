@@ -134,7 +134,7 @@ To build the Docker image for Jupyter Notebook, follow these steps:
 	Once the image is built, you can run it using the `docker run` command. This command will start a new container from the `jupyter` image, map port 8888 of the container to port 8888 on your host, and mount the current directory's `notebooks` folder to `/notebooks` inside the container.
 
 	```
-	sudo docker run --rm -p 8888:8888 -v $(pwd)/notebooks:/home/jupyteruser/notebooks jupyter
+	sudo docker run --rm -p 8888:8888 -v $(pwd)/notebooks:/notebooks jupyter
 	```
 
 	- `--rm`: Automatically removes the container when it exits. This helps to keep your system clean by removing unnecessary containers.
@@ -147,22 +147,3 @@ After running the container, you will see a URL in the terminal output that you 
 
 To terminate the terminal session, simply press `Ctrl + C`.
 
-
-
-## Files
-
-- [Dockerfile](Dockerfile): This Dockerfile leverages the `alpine` base image to create a small, efficient, and secure Jupyter Notebook image. It follows best practices by installing dependencies temporarily and running the application as a non-root user.
-- [Dockerfile-Jupyter-slim](Dockerfile-Jupyter-slim):  Designed for ease of use, this Dockerfile uses the `slim` base image. While it is more straightforward and beginner-friendly, it results in a larger image and operates with root permissions, which might be less secure.
-
-### How to Switch to the Slim Version
-
-To switch to the slim version after cloning the repository:
-1. Rename the original `Dockerfile` to `Dockerfile-alpine`:
-`
-mv Dockerfile Dockerfile-alpine
-`
-2. Rename `Dockerfile-Jupyter-slim` to `Dockerfile`:
-`
-mv Dockerfile-Jupyter-slim Dockerfile
-`
-You can then build the Docker image using the slim version instructions.
