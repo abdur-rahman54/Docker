@@ -158,11 +158,15 @@ To terminate the terminal session, simply press `Ctrl + C`.
 
 To switch to the slim version after cloning the repository:
 1. Rename the original `Dockerfile` to `Dockerfile-alpine`:
+
 `
 mv Dockerfile Dockerfile-alpine
 `
+
 2. Rename `Dockerfile-Jupyter-slim` to `Dockerfile`:
+
 `
 mv Dockerfile-Jupyter-slim Dockerfile
 `
+
 You can then build the Docker image using the slim version instructions.
